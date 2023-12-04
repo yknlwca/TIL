@@ -292,6 +292,18 @@
 #     print(f'{result:.2f}')
 
 
+# T = int(input())
+# for _ in range(T):
+#     lst = list(input().split())
+#     lst[0] = float(lst[0])
+#     for i in range(1,len(lst)):
+#         if lst[i] == '@':
+#             lst[0] *= 3
+#         elif lst[i] == '%':
+#             lst[0] += 5
+#         elif lst[i] == '#':
+#             lst[0] -= 7
+#     print(f'{lst[0]:.2f}')
 
 # n = int(input())
 # chang = 100
@@ -392,6 +404,429 @@
 #         cnt += money // c
 #         money %= c
 # print(cnt)
+
+
+# n = int(input())
+# Q1 = 0
+# Q2 = 0
+# Q3 = 0
+# Q4 = 0
+# AXIS = 0
+# for _ in range(n):
+#     a,b = map(int,input().split())
+#     if a == 0 or b == 0:
+#         AXIS += 1
+#     elif a > 0 and b > 0 :
+#         Q1 += 1
+#     elif a > 0 and b < 0 :
+#         Q4 += 1
+#     elif a < 0 and b > 0 :
+#         Q2 += 1
+#     elif a < 0 and b < 0 :
+#         Q3 += 1
+# print(f'Q1: {Q1}')
+# print(f'Q2: {Q2}')
+# print(f'Q3: {Q3}')
+# print(f'Q4: {Q4}')
+# print(f'AXIS: {AXIS}')
+
+# while 1:
+#     lst = list(map(int,input().split()))
+#     lst.sort()
+#     if sum(lst) == 0 :
+#         break
+#
+#     if lst[0]**2 + lst[1]**2 == lst[-1]**2:
+#         print('right')
+#     else:
+#         print('wrong')
+
+
+# T = int(input())
+# lst1 = []
+# for _ in range(T):
+#     lst2 = list(map(int,input().split()))
+#     lst1.append(lst2)
+# x = [i[0] for i in lst1]
+# y = [i[-1] for i in lst1]
+#
+# print((max(x)-min(x))*(max(y)-min(y)))
+
+
+
+# 두변의 길이의 합이 나머지 한변의 길이보다 커야한다.
+# 두변의 길이 합이 나머지 한변 길이 보다 작
+# lst = list(map(int,input().split()))
+# lst.sort()
+# if lst[-1] <= lst[0]+lst[1]:
+#     print(sum(lst))
+# else:
+#     lst[-1] = lst[0] + lst[1] -1
+#     print(sum(lst))
+
+
+# t = input()
+# l = 10
+# for i in range(len(t)-1):
+#     if t[i+1] == t[i]:
+#         l += 5
+#     elif t[i+1] != t[i]:
+#         l += 10
+# print(l)
+
+
+# t = int(input())
+#
+# for _ in range(t):
+#     p = int(input())
+#
+#     max_price = 0
+#     max_player = ""
+#
+#     for _ in range(p):
+#         price, player = input().split()
+#         price = int(price)
+#
+#         if price > max_price:
+#             max_price = price
+#             max_player = player
+#
+#     print(max_player)
+
+# lst = []
+# a = 0
+# for _ in range(5):
+#     b = int(input())
+#     a += b
+#     lst.append(b)
+#     lst.sort()
+# print(a // 5)
+# print(lst[2])
+
+
+# import math
+
+#
+# def find_min_sum_of_squares(m, n):
+#     min_square = float('inf')
+#     sum_of_squares = 0
+#     has_square = False
+#
+#     for i in range(m, n + 1):
+#         square_root = int(math.sqrt(i))
+#         if square_root ** 2 == i:
+#             has_square = True
+#             min_square = min(min_square, i)
+#             sum_of_squares += i
+#
+#     if not has_square:
+#         return -1, -1
+#     else:
+#         return sum_of_squares, min_square
+#
+#
+# m = int(input())
+# n = int(input())
+#
+# sum_of_squares, min_square = find_min_sum_of_squares(m, n)
+# print(sum_of_squares)
+# print(min_square)
+
+
+
+# import math
+#
+# M = int(input())
+# N = int(input())
+# lst = []
+#
+# for i in range(M, N+1):
+#     if int(math.sqrt(i))**2 == i:
+#         lst.append(i)
+#
+# if not lst:
+#     print(-1)
+# else:
+#     print(sum(lst))
+#     print(lst[0])
+
+
+# from datetime import datetime
+#
+# def find_age_range(students):
+#     youngest = float('inf')
+#     oldest = 0
+#     youngest_name = ""
+#     oldest_name = ""
+#
+#     for student in students:
+#         name, day, month, year = student.split()
+#         birthday = datetime(int(year), int(month), int(day))
+#         age = (datetime.now() - birthday).days // 365
+#
+#         if age < youngest:
+#             youngest = age
+#             youngest_name = name
+#
+#         if age > oldest:
+#             oldest = age
+#             oldest_name = name
+#
+#     return youngest_name, oldest_name
+#
+# # 입력 받기
+# n = int(input())
+# student_list = [input() for _ in range(n)]
+#
+# # 결과 출력
+# youngest, oldest = find_age_range(student_list)
+# print(youngest)
+# print(oldest)
+
+
+
+# def fibonacci(n):
+#     fib = [0, 1]
+#
+#     for i in range(2, n + 1):
+#         fib.append(fib[i - 1] + fib[i - 2])
+#
+#     return fib[n]
+#
+# n = int(input())
+#
+# result = fibonacci(n)
+# print(result)
+
+
+# N = int(input())
+# for i in range(N,0,-1):
+#     print(i)
+
+# T = int(input())
+# e = 0
+# k = 0
+# for _ in range(T):
+#     N = int(input())
+#     for _ in range(N):
+#         a ,b = input().split()
+#         c = int(a)
+#         d = float(b)
+#         e += c
+#         k += (c*d)
+# print(k/e)
+
+
+# N,M = map(int,input().split())
+# lst = list(map(int,input().split()))
+
+
+
+# from itertools import combinations
+#
+# def find_nearest_sum(cards, target):
+#     closest_sum = 0
+#
+#     for combination in combinations(cards, 3):
+#         current_sum = sum(combination)
+#
+#         if current_sum == target:
+#             return current_sum
+#
+#         if closest_sum < current_sum <= target:
+#             closest_sum = current_sum
+#
+#     return closest_sum
+#
+# # 입력 받기
+# N, M = map(int, input().split())
+# cards = list(map(int, input().split()))
+#
+# # 결과 출력
+# result = find_nearest_sum(cards, M)
+# print(result)
+
+# T = int(input())
+# for _ in range(T):
+#     s = int(input())
+#     k = int(input())
+#     for _ in range(k):
+#         a,b = map(int,input().split())
+#         s += a*b
+#     print(s)
+
+
+# N = int(input())
+# a = 1
+# for i in range(1,N+1):
+#     a *= i
+# print(a)
+
+# a = int(input())
+# lst = list(map(int,input().split()))
+# cnt = 0
+#
+# for i in lst:
+#     if i == a:
+#         cnt += 1
+# print(cnt)
+
+
+# T = int(input())
+# for _ in range(T):
+#     N = int(input())
+#     lst = list(map(int,input().split()))
+#     print(sum(lst))
+
+# lst = []
+# a = 0
+# for _ in range(7):
+#     N = int(input())
+#     if N % 2 == 1:
+#         lst.append(N)
+#         a += N
+# if a == 0:
+#     print(-1)
+# else:
+#     print(a)
+#     lst.sort()
+#     print(lst[0])
+
+
+
+# def fibo(n):
+#     fib = [0, 1]
+#
+#     for i in range(2, n + 1):
+#         fib.append(fib[i - 1] + fib[i - 2])
+#
+#     return fib[n]
+#
+# n = int(input())
+# print(fibo(n))
+
+
+# A,B = map(int,input().split())
+#
+# C = []
+# if A == 1 and B == 1:
+#     print(1)
+# else:
+#     for i in range(B):
+#         if i == 0 :
+#             pass
+#         else:
+#             for j in range(i):
+#                 C.append(i)
+#     print(sum(C[A-1:B]))
+
+# T = int(input())
+# for _ in range(T):
+#     lst = list(map(int,input().split()))
+#     lst.sort()
+#     print(lst[-3])
+
+# a,b = map(int,input().split())
+#
+# lst = []
+# for i in range(1,max(a,b)+1):
+#     if a % i == 0 and b % i ==0:
+#         lst.append(i)
+# k = (a*b) // lst[-1]
+#
+# print(lst[-1])
+# print(k)
+
+
+# N = int(input())
+# lst = []
+# for _ in range(N):
+#     a = int(input())
+#     lst.append(a)
+# lst.sort()
+# for i in lst:
+#     print(i)
+
+# K = int(input())
+# lst = []
+# for _ in range(K):
+#     a = int(input())
+#     if a != 0:
+#         lst.append(a)
+#     elif a == 0 :
+#         lst.pop()
+# print(sum(lst))
+
+
+# N = int(input())
+# members = []
+#
+# for i in range(N):
+#     age, name = input().split()
+#     members.append((int(age), name, i))
+#
+# members.sort(key=lambda x: (x[0], x[2]))
+#
+# for member in members:
+#     print(member[0], member[1])
+
+# a, b = input().split()
+# a = a[::-1]
+# b = b[::-1]
+# a = int(a)
+# b = int(b)
+# result = str(a+b)
+# print(int(result[::-1]))
+
+
+#
+# T = int(input())
+# for x in range(T):
+#     print(f'Class {x+1}')
+#     lst = []
+#     lst1 = []
+#     lst = list(map(int , input().split()))
+#     lst.remove(lst[0])
+#     lst.sort()
+#     for i in range(len(lst)-1):
+#         k = lst[i+1] - lst[i]
+#         lst1.append(k)
+#     print(f'Max {max(lst)}, Min {min(lst)}, Largest gap {max(lst1)}')
+
+# 퀵 정렬 공부하기
+# N = int(input())
+# lst = []
+# for _ in range(N):
+#     a = int(input())
+#     lst.append(a)
+#     lst.sort()
+# for i in lst:
+#     print(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
