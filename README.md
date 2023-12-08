@@ -1,5 +1,11 @@
 # Today I Learned
 
+### 참고 사이트
+https://paperswithcode.com/
+* 연구 논문과 코드를 함께 제공하는 온라인 플랫폼,
+* 머신 러닝과 딥러닝 분야에서 발표된 논문과 해당 논문에 대한 구현된 코드를 함께 제공
+* 허깅페이스 https://huggingface.co/
+* https://blog.naver.com/seonspace/222928891719
 
 
 # 처음 겪는 오류
