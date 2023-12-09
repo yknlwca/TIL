@@ -803,14 +803,121 @@
 # for i in lst:
 #     print(i)
 
+# while 1:
+#     N = input()
+#     if N == 'END':
+#         break
+#     print(N[::-1])
+
+
+# N = int(input())
+# lst = []
+# for _ in range(N):
+#     a = int(input())
+#     lst.append(a)
+#     lst.sort()
+# for i in lst:
+#     print(i)
+
+# N = int(input())
+# k = N // 5
+# m = (N-(k*5))
+# if m % 3 == 0 :
+#     print(k+(m//3))
+# elif m % 3 != 0 :
+#     print(-1)
+
+
+# scores = [list(map(int, input().split())) for _ in range(5)]
+#
+#
+# total_scores = [sum(score) for score in scores]
+#
+#
+# winner = total_scores.index(max(total_scores)) + 1
+# max_score = max(total_scores)
+#
+# print(winner, max_score)
+
+
+# lst = [1,5,5,7,8]
+# print(sum(lst))
+# lst.sort()
+# print(lst)
+# print(sum(lst[1:-1]))
+# print(len(lst[1:-1]))
+
+
+# N = int(input())
+#
+# def banal(value):
+#     inter = int(value)
+#     jung = value - inter
+#     if jung >= 0.5:
+#         return inter + 1
+#     else:
+#         return inter
+#
+# if N == 0 :
+#     print(0)
+# else:
+#     zelsa = banal(N*0.15)
+#     lst = []
+#     for _ in range(N):
+#         a = int(input())
+#         lst.append(a)
+#         lst.sort()
+#         zelav = lst[zelsa:-zelsa]
+#     print(banal((sum(zelav)/len(zelav))))
 
 
 
 
+# max_passenger = 0
+# current_passenger = 0
+#
+# for _ in range(10):
+#     out, in_ = map(int, input().split())
+#     current_passenger = current_passenger - out + in_
+#     max_passenger = max(max_passenger, current_passenger)
+#
+# print(max_passenger)
 
 
 
+# A = input()
+# b = A.split('-')
+# for i in range(len(b)):
+#     print(b[i][0], end = '')
 
+
+# n = int(input())
+# for _ in range(n):
+#     a,b = input().split()
+#     a = int(a)
+#     print(b[:a-1]+b[a:])
+
+
+def find_max_two_friends(N, friendships):
+    def find_friends(person):
+        direct_friends = {i for i in range(N) if friendships[person][i] == 'Y'}
+        indirect_friends = set()
+        for friend in direct_friends:
+            indirect_friends |= {i for i in range(N) if friendships[friend][i] == 'Y'}
+        return (direct_friends | indirect_friends) - {person}
+
+    max_two_friends = 0
+    for person in range(N):
+        max_two_friends = max(max_two_friends, len(find_friends(person)))
+
+    return max_two_friends
+
+N = int(input())
+friendships = []
+for _ in range(N):
+    friendships.append(input())
+
+print(find_max_two_friends(N, friendships))
 
 
 
