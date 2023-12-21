@@ -898,26 +898,465 @@
 #     print(b[:a-1]+b[a:])
 
 
-def find_max_two_friends(N, friendships):
-    def find_friends(person):
-        direct_friends = {i for i in range(N) if friendships[person][i] == 'Y'}
-        indirect_friends = set()
-        for friend in direct_friends:
-            indirect_friends |= {i for i in range(N) if friendships[friend][i] == 'Y'}
-        return (direct_friends | indirect_friends) - {person}
+# def find_max_two_friends(N, friendships):
+#     def find_friends(person):
+#         direct_friends = {i for i in range(N) if friendships[person][i] == 'Y'}
+#         indirect_friends = set()
+#         for friend in direct_friends:
+#             indirect_friends |= {i for i in range(N) if friendships[friend][i] == 'Y'}
+#         return (direct_friends | indirect_friends) - {person}
+#
+#     max_two_friends = 0
+#     for person in range(N):
+#         max_two_friends = max(max_two_friends, len(find_friends(person)))
+#
+#     return max_two_friends
+#
+# N = int(input())
+# friendships = []
+# for _ in range(N):
+#     friendships.append(input())
+#
+# print(find_max_two_friends(N, friendships))
 
-    max_two_friends = 0
-    for person in range(N):
-        max_two_friends = max(max_two_friends, len(find_friends(person)))
+# lst = []
+# for i in range(8):
+#     score = int(input())
+#     lst.append((score, i+1))
+# lst.sort(reverse=True)
+# top_scores = lst[:5]
+# total = sum(score for score, _ in top_scores)
+# numbers = sorted(problem for _, problem in top_scores)
+# print(total)
+# for j in numbers:
+#     print(j, end=' ')
 
-    return max_two_friends
+# N,M = map(int,input().split())
+# lst = list(map(int,input().split()))
+# ans = 0
+# lst.sort()
+# for i in range(len(lst)-2):
+#     for j in range(i+1,len(lst)-1):
+#         for k in range(j+1,len(lst)):
+#             if M >= lst[i]+lst[j]+lst[k] and (lst[i]+lst[j]+lst[k]) - ans > 0 :
+#                 ans = lst[i] + lst[j] + lst[k]
+# print(ans)
 
-N = int(input())
-friendships = []
-for _ in range(N):
-    friendships.append(input())
+# import sys
+#
+# N = int(sys.stdin.readline())
+# lst = []
+# for _ in range(N):
+#     a = int(sys.stdin.readline())
+#     lst.append(a)
+# lst.sort()
+# for i in lst:
+#     sys.stdout.write(i)
 
-print(find_max_two_friends(N, friendships))
+# import sys
+# N = int(sys.stdin.readline())
+# lst = []
+# for _ in range(N):
+#     lst.append(int(sys.stdin.readline()))
+# lst.sort()
+# print(round(sum(lst)/len(lst)))
+# print(lst[len(lst)//2])
+#
+# count_dict = {}
+# max_count = 0
+# for num in lst:
+#     if num in count_dict:
+#         count_dict[num] += 1
+#     else:
+#         count_dict[num] = 1
+#     if count_dict[num] > max_count:
+#         max_count = count_dict[num]
+#
+# mode = [key for key, value in count_dict.items() if value == max_count]
+#
+# print(mode[1] if len(mode) > 1 else mode[0])
+# print(max(lst)-min(lst))
+
+
+
+# N = int(input())
+# A = list(map(int, input().split()))
+# M = int(input())
+# isin = list(map(int, input().split()))
+#
+# A = set(A)
+# result = []
+#
+# for i in isin:
+#     if i in A:
+#         result.append(1)
+#     else:
+#         result.append(0)
+#
+# for j in result:
+#     print(j)
+
+
+# N = input()
+# tennum = int(N,16)
+# print(tennum)
+
+
+# N = int(input())
+# cnt = 0
+#
+# if N // 5 > 0 :
+#     cnt += N//5
+#     cnt += (N%5)//3
+#     print(cnt)
+
+
+# N = int(input())
+# cnt = -1
+#
+# value, extra = divmod(N, 5)
+#
+# if extra == 0:
+#     cnt = value
+# else:
+#     while value >= 0:
+#         if extra % 3 == 0:
+#             cnt = value + (extra // 3)
+#             break
+#         else:
+#             value -= 1
+#             extra += 5
+# print(cnt)
+
+
+# N = int(input())
+# lst1 = list(map(int,input().split()))
+# M = int(input())
+# lst2 = list(map(int,input().split()))
+# cnt = 0
+# for i in range(M):
+#     if lst2[i] in lst1:
+#        cnt += 1
+# print(cnt)
+#¡
+# n = int(input())
+# for i in range(n):
+#     print(' '* i + '*'* (n-i))
+
+
+# n = int(input())
+# arr = [int(input()) for _ in range(n)]
+# arr.sort()
+# for i in range(arr):
+#     print(i)
+
+
+# N = int(input())
+# lst = [int(input()) for _ in range(N)]
+# lst.sort()
+# for i in lst:
+#     print(i)
+
+
+# import sys
+# input = sys.stdin.readline
+# print = sys.stdout.write
+#
+# n = int(input())
+# sortlist = [0]*10001
+#
+# for i in range(n):
+#     sortlist[int(input())] += 1
+#
+# for i in range(1,10001):
+#     for j in range(sortlist[i]):
+#         print(str(i) + '\n')
+
+
+# n = int(input())
+# point = [list(map(int,input().split())) for _ in range(n)]
+# point.sort()
+# for x in point:
+#     print(' '.join(map(str,x)))
+
+# n = int(input())
+# point = [list(map(int,input().split())) for _ in range(n)]
+#
+# point.sort(key= lambda x:(x[1],x[0]))
+#
+# for x in point:
+#     print(' '.join(map(str,x)))
+
+
+# lst = list(map(int,input().split()))
+# lst.sort()
+# for i in lst:
+#     print(i, end = ' ')
+
+#
+# def find():
+#
+#     oldest = youngest = students[0]
+#     for name, day, month, year in students[1:]:
+#         current_birthday = (year, month, day)
+#         oldest_birthday = (oldest[3], oldest[2], oldest[1])
+#         youngest_birthday = (youngest[3], youngest[2], youngest[1])
+#
+#         if current_birthday < oldest_birthday:
+#             oldest = (name, day, month, year)
+#
+#         if current_birthday > youngest_birthday:
+#             youngest = (name, day, month, year)
+#
+#
+# n = int(input())
+# students = []
+# for _ in range(n):
+#     name, day, month, year = input().split()
+#     students.append((name, int(day), int(month), int(year)))
+#
+# print(oldest[0])
+# print(youngest[0])
+
+
+# N = int(input())
+#
+# for _ in range(N):
+#     lst = list(map(int,input().split()))
+#     lst.sort()
+#     jumsu = lst[1:-1]
+#     if jumsu[-1] - jumsu[0] >= 4 :
+#         print('KIN')
+#     else:
+#         print(sum(jumsu))
+
+
+
+# s = input().split(',')
+# for i in s:
+#     int(i)
+# print(len(s))
+
+
+# a, b, s = map(int,input().split())
+# x = a + b
+# y = a + b
+# while 1:
+#     x += b
+#     y += a
+#     if x == s or y == s :
+#         print('YES')
+#     elif x > s or y > s :
+#         break
+#     else:
+#         print('NO')
+
+
+# 2003번
+# 문제
+# N개의 수로 된 수열 A[1], A[2], …, A[N] 이 있다. 이 수열의 i번째 수부터 j번째 수까지의 합
+# A[i] + A[i+1] + … + A[j-1] + A[j]가 M이 되는 경우의 수를 구하는 프로그램을 작성하시오.
+
+# 입력
+# 첫째 줄에 N(1 ≤ N ≤ 10,000), M(1 ≤ M ≤ 300,000,000)이 주어진다.
+# 다음 줄에는 A[1], A[2], …, A[N]이 공백으로 분리되어 주어진다. 각각의 A[x]는 30,000을 넘지 않는 자연수이다.
+
+# 출력
+# 첫째 줄에 경우의 수를 출력한다.
+#
+# 예제 입력 1
+# 4 2
+# 1 1 1 1
+# 예제 출력 1
+# 3
+# 예제 입력 2
+# 10 5
+# 1 2 3 4 2 5 3 1 1 2
+# 예제 출력 2
+# 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
