@@ -1,3 +1,5 @@
+package boj;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 

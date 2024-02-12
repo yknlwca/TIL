@@ -21,7 +21,7 @@ public class Boj1018 {
         int minRepaint = Integer.MAX_VALUE;
         for (int i = 0; i <= N - 8; i++) {
             for (int j = 0; j <= M - 8; j++) {
-                int repaint = countRepaint(board, i, j);
+                int repaint = reDraw(board, i, j);
                 minRepaint = Math.min(minRepaint, repaint);
             }
         }
@@ -31,7 +31,7 @@ public class Boj1018 {
         scanner.close();
     }
 
-    private static int countRepaint(char[][] board, int x, int y) {
+    private static int reDraw(char[][] board, int x, int y) {
         char startColor = board[x][y];
         int repaint = 0;
 

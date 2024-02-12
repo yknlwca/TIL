@@ -5,34 +5,45 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Boj5397 {
+public class simple {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String initialString = br.readLine(); // 초기 문자열
+        int commandCount = Integer.parseInt(br.readLine()); // 명령어 개수
 
-    private static String proInput(String input) {
         Stack<Character> leftStack = new Stack<>();
         Stack<Character> rightStack = new Stack<>();
 
-        for (char c : input.toCharArray()) {
-            switch (c) {
-                case '<':
+        // 초기 문자열을 왼쪽 스택에 넣기
+        for (char c : initialString.toCharArray()) {
+            leftStack.push(c);
+        }
+
+        for (int i = 0; i < commandCount; i++) {
+            String[] command = br.readLine().split(" ");
+            switch (command[0]) {
+                case "L": // 커서를 왼쪽으로 이동
                     if (!leftStack.isEmpty()) {
                         rightStack.push(leftStack.pop());
                     }
                     break;
-                case '>':
+                case "D": // 커서를 오른쪽으로 이동
                     if (!rightStack.isEmpty()) {
                         leftStack.push(rightStack.pop());
                     }
                     break;
-                case '-':
+                case "B": // 왼쪽 문자 삭제
                     if (!leftStack.isEmpty()) {
                         leftStack.pop();
                     }
                     break;
-                default:
-                    leftStack.push(c);
+                case "P": // 왼쪽에 문자 추가
+                    leftStack.push(command[1].charAt(0));
                     break;
             }
         }
+
+        // 결과 문자열 만들기
         StringBuilder sb = new StringBuilder();
         while (!leftStack.isEmpty()) {
             rightStack.push(leftStack.pop());
@@ -40,18 +51,7 @@ public class Boj5397 {
         while (!rightStack.isEmpty()) {
             sb.append(rightStack.pop());
         }
-        return sb.toString();
-    }
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        int test_case = Integer.parseInt(bf.readLine());
-
-        while (test_case > 0) {
-            String input = bf.readLine();
-            System.out.println(proInput(input));
-            test_case--;
-        }
-        bf.close();
+        System.out.println(sb.toString());
     }
 }
