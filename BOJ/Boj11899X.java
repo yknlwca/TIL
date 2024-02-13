@@ -9,11 +9,32 @@ public class Boj11899X {
 
 		String str = bf.readLine();
 		Stack<Character> stack = new Stack<>();
-		int cnt = 0;
-
+		int cntClose = 0;
+		int cntOpen = 0;
+		boolean bal = true;
+		
 		for (int i = 0; i < str.length(); i++) {
-			char c = str.charAt(i);
+			int balance = 0;
+			if (i == '(') {
+				balance++;
+			}else {
+				balance--;
+			}
+			if (balance < 0) {
+				bal = false;
+			}
+			stack.push(str.charAt(i));
 			
 		}
+		while (!stack.isEmpty()) {
+			if(stack.pop() == ')') {
+				cntClose++;
+			}else if (stack.pop() == '(') {
+				cntOpen--;
+			}
+		}
+		
+		if (bal) System.out.println(cntOpen);
+		else System.out.println(cntOpen + cntClose);
 	}
 }
